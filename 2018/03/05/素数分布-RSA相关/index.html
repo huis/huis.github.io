@@ -13,7 +13,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/03/05/素数分布-RSA相关/index.html">
 <meta property="og:site_name" content="Rafael Sun">
 <meta property="og:description" content="在RSA的的算法中间，有一个非常核心的问题，就是要找两个足够大的素数，利用这两个素数的乘积很难用计算机在短时间完成分解的性质来设计的。 但是这边就有一个非常现实的问题，第一，这两个足够大的素数怎么找，第二，素数够不够多，如果素数数量是非常有限的，随着数越来越大，素数的个数增长也同时变得很慢，那是不是就可以利用列表的方式，然后用\(n^2\)的复杂度来完成暴力破解  素数的分布 这边首先要提一个Pr">
-<meta property="og:updated_time" content="2018-03-05T12:12:37.830Z">
+<meta property="og:updated_time" content="2018-03-05T12:27:01.556Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="素数分布-RSA相关">
 <meta name="twitter:description" content="在RSA的的算法中间，有一个非常核心的问题，就是要找两个足够大的素数，利用这两个素数的乘积很难用计算机在短时间完成分解的性质来设计的。 但是这边就有一个非常现实的问题，第一，这两个足够大的素数怎么找，第二，素数够不够多，如果素数数量是非常有限的，随着数越来越大，素数的个数增长也同时变得很慢，那是不是就可以利用列表的方式，然后用\(n^2\)的复杂度来完成暴力破解  素数的分布 这边首先要提一个Pr">
@@ -121,14 +121,14 @@
 <p>上面已经提到素数的平均间隔其实是有限的，所以我们就有可能采取下面的算法</p>
 <ol>
 <li>随机产生一个\(512\) bit的奇数</li>
-<li>判断这个数是质数与否，这边大概需要判断\( \frac{Log§}{2} \sim 177 \)次</li>
+<li>判断这个数是质数与否，这边大概需要判断\( \frac{log§}{2} \sim 177 \)次</li>
 <li>如果不是， 加 \(2\)， 继续判断</li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/05/素数分布-RSA相关/" data-id="cjee6rpau0001pwne2hkueh3x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/05/素数分布-RSA相关/" data-id="cjee7a89s0001agnezbknrauv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -222,21 +222,6 @@
 
 
 
-  </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
