@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Head tag -->
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Title -->
+  
+  <title>素数的的个数 - Rafael Sun</title>
+
+  <!--Favicon-->
+  <link rel="icon" href="favicon/favicon.ico">
+
+  <!--Description-->
+  
+      <meta name="description" content="在RSA的的算法中间，有一个非常核心的问题，就是要找两个足够大的素数，利用这两个素数的乘积很难用计算机在短时间完成分解的性质来设计的。 但是这边就有一个非常现实的问题，第一，这两个足够大的素数怎么找，第二，素数够不够多，如果素数数量是非常有限的，随着数越来越大，素数的个数增长也同时变得很慢，那是不是">
+  
+
+  <!--Author-->
+  
+      <meta name="author" content="Hui Sun">
+  
+
+  <!-- Pure CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Open+Sans:300,800" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+
+  <body>
+  	<div class="container-fluid navbar-container m-sm-5">
+      <!-- Header -->
+      <nav class="navbar navbar-toggleable-sm navbar-light px-1 py-3 my-3 mb-sm-5">
+  <a class="navbar-brand ml-2" href="/">Rafael Sun</a>
+  <button class="navbar-toggler navbar-toggler-right py-2" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse text-center" id="navbarCollapse">
+    <ul class="navbar-nav ml-auto my-auto">
+      
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      
+    </ul>
+    <hr class="hidden-md-up" />
+  </div>
+</nav>
+
+
+  		<div class="row">
+  			<div class="col-12 mb-4">
+  <img class="img-fluid project-img" src="/images/Callas.jpg" alt="素数的的个数">
+</div>
+<div class="col-lg-4 col-12 pt-3 px-4 pr-lg-5">
+  <h1>素数的的个数</h1>
+</div>
+<div class="col-lg-8 col-12 pt-lg-3 mb-4 pl-lg-5 px-lg-0 px-4 portfolio-content">
+  <p><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><br></script><br>在RSA的的算法中间，有一个非常核心的问题，就是要找两个足够大的素数，利用这两个素数的乘积很难用计算机在短时间完成分解的性质来设计的。 但是这边就有一个非常现实的问题，第一，这两个足够大的素数怎么找，第二，素数够不够多，如果素数数量是非常有限的，随着数越来越大，素数的个数增长也同时变得很慢，那是不是就可以利用列表的方式，然后用\(n^2\)的复杂度来完成暴力破解</p>
+<h1 id="素数的分布"><a href="#素数的分布" class="headerlink" title="素数的分布"></a>素数的分布</h1><p>这边首先要提一个<a href="https://en.wikipedia.org/wiki/Prime_number_theorem" target="_blank" rel="noopener">Prime number theroem</a>。这个理论直接揭示了素数分布的规律，简单说素数的分布符合以下的分布$$\pi(N) \sim \frac{N}{log(N)}$$</p>
+<p>Wiki上面对这个分布，有一个形象的说法，就是说对于一个小于\(10^n\)的数来说，它是素数的概率是一个小于\(10^{2n}\)的数的两倍</p>
+<p>然后根据这个分布，我们可以得到大概的素数个数的估计，已经大概的素数间隔的估计  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">范围</th>
+<th style="text-align:left">素数个数</th>
+<th style="text-align:left">平均间隔估计</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">\(10^5\)</td>
+<td style="text-align:left">9592</td>
+<td style="text-align:left">10.425</td>
+</tr>
+<tr>
+<td style="text-align:left">\(10^{10}\)</td>
+<td style="text-align:left">455 052 511</td>
+<td style="text-align:left">21.975</td>
+</tr>
+<tr>
+<td style="text-align:left">\(10^{20}\)</td>
+<td style="text-align:left">2 220 819 602 560 918 840</td>
+<td style="text-align:left">45.028</td>
+</tr>
+</tbody>
+</table>
+<p>因为现在key的size大概是 \(1024\) bit - \(4096\) bit, 这就意味着我们使用的素数大概是 \(512\) bit - \(2048\) bit。 \(2^{512}\) 大于 \(10^{150}\)。 利用上面的分布，大概我们可以估计出在这区间中大概有\(2.8\times10^{147}\)个素数，这个数量是非常巨大的，几乎不可能用暴力搜索的办法来分解两个大素数的乘积</p>
+<h1 id="如何寻找这两个素数"><a href="#如何寻找这两个素数" class="headerlink" title="如何寻找这两个素数"></a>如何寻找这两个素数</h1><p>上面已经提到素数的平均间隔其实是有限的，所以我们就有可能采取下面的算法</p>
+<ol>
+<li>随机产生一个\(512\) bit的奇数</li>
+<li>判断这个数是质数与否，这边大概需要判断\(\frac{Log(p)}{2} \sim 177\)次</li>
+<li>如果不是， 加 \(2\)， 继续判断</li>
+</ol>
+
+</div>
+
+
+      </div>
+      
+  	</div>
+
+    <!-- After footer scripts -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+  </body>
+</html>
