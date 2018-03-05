@@ -75,8 +75,7 @@
   <h1>素数分布-RSA相关</h1>
 </div>
 <div class="col-lg-8 col-12 pt-lg-3 mb-4 pl-lg-5 px-lg-0 px-4 portfolio-content">
-  <p><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script><br>在RSA的的算法中间，有一个非常核心的问题，就是要找两个足够大的素数，利用这两个素数的乘积很难用计算机在短时间完成分解的性质来设计的。 但是这边就有一个非常现实的问题，第一，这两个足够大的素数怎么找，第二，素数够不够多，如果素数数量是非常有限的，随着数越来越大，素数的个数增长也同时变得很慢，那是不是就可以利用列表的方式，然后用\(n^2\)的复杂度来完成暴力破解</p>
+  <p>在RSA的的算法中间，有一个非常核心的问题，就是要找两个足够大的素数，利用这两个素数的乘积很难用计算机在短时间完成分解的性质来设计的。 但是这边就有一个非常现实的问题，第一，这两个足够大的素数怎么找，第二，素数够不够多，如果素数数量是非常有限的，随着数越来越大，素数的个数增长也同时变得很慢，那是不是就可以利用列表的方式，然后用\(n^2\)的复杂度来完成暴力破解</p>
 <h1 id="素数的分布"><a href="#素数的分布" class="headerlink" title="素数的分布"></a>素数的分布</h1><p>这边首先要提一个<a href="https://en.wikipedia.org/wiki/Prime_number_theorem" target="_blank" rel="noopener">Prime number theroem</a>。这个理论直接揭示了素数分布的规律，简单说素数的分布符合以下的分布<script type="math/tex">\pi(N) \sim \frac{N}{log(N)}</script></p>
 <p>Wiki上面对这个分布，有一个形象的说法，就是说对于一个小于\(10^n\)的数来说，它是素数的概率是一个小于\(10^{2n}\)的数的两倍</p>
 <p>然后根据这个分布，我们可以得到大概的素数个数的估计，已经大概的素数间隔的估计  </p>
