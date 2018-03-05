@@ -13,7 +13,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/03/05/素数分布-RSA相关/index.html">
 <meta property="og:site_name" content="Rafael Sun">
 <meta property="og:description" content="在RSA的的算法中间，有一个非常核心的问题，就是要找两个足够大的素数，利用这两个素数的乘积很难用计算机在短时间完成分解的性质来设计的。 但是这边就有一个非常现实的问题，第一，这两个足够大的素数怎么找，第二，素数够不够多，如果素数数量是非常有限的，随着数越来越大，素数的个数增长也同时变得很慢，那是不是就可以利用列表的方式，然后用\(n^2\)的复杂度来完成暴力破解  素数的分布 这边首先要提一个Pr">
-<meta property="og:updated_time" content="2018-03-05T10:34:58.248Z">
+<meta property="og:updated_time" content="2018-03-05T10:38:55.702Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="素数分布-RSA相关">
 <meta name="twitter:description" content="在RSA的的算法中间，有一个非常核心的问题，就是要找两个足够大的素数，利用这两个素数的乘积很难用计算机在短时间完成分解的性质来设计的。 但是这边就有一个非常现实的问题，第一，这两个足够大的素数怎么找，第二，素数够不够多，如果素数数量是非常有限的，随着数越来越大，素数的个数增长也同时变得很慢，那是不是就可以利用列表的方式，然后用\(n^2\)的复杂度来完成暴力破解  素数的分布 这边首先要提一个Pr">
@@ -54,7 +54,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -88,7 +88,7 @@
         <p>在RSA的的算法中间，有一个非常核心的问题，就是要找两个足够大的素数，利用这两个素数的乘积很难用计算机在短时间完成分解的性质来设计的。 但是这边就有一个非常现实的问题，第一，这两个足够大的素数怎么找，第二，素数够不够多，如果素数数量是非常有限的，随着数越来越大，素数的个数增长也同时变得很慢，那是不是就可以利用列表的方式，然后用\(n^2\)的复杂度来完成暴力破解</p>
 <h1 id="素数的分布"><a class="markdownIt-Anchor" href="#素数的分布"></a> 素数的分布</h1>
 <p>这边首先要提一个<a href="https://en.wikipedia.org/wiki/Prime_number_theorem" target="_blank" rel="noopener">Prime number theroem</a>。这个理论直接揭示了素数分布的规律，简单说素数的分布符合以下的分布$$\pi(N) \sim \frac{N}{log(N)}$$</p>
-<p>Wiki上面对这个分布，有一个形象的说法，就是说对于一个小于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><msup><mn>0</mn><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">10^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.664392em;"></span><span class="strut bottom" style="height:0.664392em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">1</span><span class="mord"><span class="mord mathrm">0</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>的数来说，它是素数的概率是一个小于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><msup><mn>0</mn><mrow><mn>2</mn><mi>n</mi></mrow></msup></mrow><annotation encoding="application/x-tex">10^{2n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">1</span><span class="mord"><span class="mord mathrm">0</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord mathrm">2</span><span class="mord mathit">n</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>的数的两倍</p>
+<p>Wiki上面对这个分布，有一个形象的说法，就是说对于一个小于\(10<sup>n\)的数来说，它是素数的概率是一个小于\(10</sup>{2n}\)的数的两倍</p>
 <p>然后根据这个分布，我们可以得到大概的素数个数的估计，已经大概的素数间隔的估计</p>
 <table>
 <thead>
@@ -121,14 +121,14 @@
 <p>上面已经提到素数的平均间隔其实是有限的，所以我们就有可能采取下面的算法</p>
 <ol>
 <li>随机产生一个\(512\) bit的奇数</li>
-<li>判断这个数是质数与否，这边大概需要判断<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi>L</mi><mi>o</mi><mi>g</mi><mo>(</mo><mi>p</mi><mo>)</mo></mrow><mrow><mn>2</mn></mrow></mfrac><mo>∼</mo><mn>1</mn><mn>7</mn><mn>7</mn></mrow><annotation encoding="application/x-tex">\frac{Log(p)}{2} \sim 177</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.01em;"></span><span class="strut bottom" style="height:1.355em;vertical-align:-0.345em;"></span><span class="base textstyle uncramped"><span class="mord reset-textstyle textstyle uncramped"><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.345em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathrm">2</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.485em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord mathit">L</span><span class="mord mathit">o</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathit">p</span><span class="mclose">)</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mrel">∼</span><span class="mord mathrm">1</span><span class="mord mathrm">7</span><span class="mord mathrm">7</span></span></span></span>次</li>
+<li>判断这个数是质数与否，这边大概需要判断\(\frac{Log§}{2} \sim 177\)次</li>
 <li>如果不是， 加 \(2\)， 继续判断</li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/05/素数分布-RSA相关/" data-id="cjee368lz0001h0negcbiiqdg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/05/素数分布-RSA相关/" data-id="cjee3f7n600017wnen3e4da5e" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -139,7 +139,7 @@
   
   
     <a href="/2018/03/03/RSA/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Älter</strong>
       <div class="article-nav-title">RSA</div>
     </a>
   
@@ -162,7 +162,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
     </div>
@@ -172,7 +172,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
         
