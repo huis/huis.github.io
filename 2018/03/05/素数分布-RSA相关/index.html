@@ -37,10 +37,6 @@
   <![endif]-->
 
   <!-- Google Analytics --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-
-  <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
-  </script>
   
 
 </head>
@@ -80,10 +76,10 @@
 </div>
 <div class="col-lg-8 col-12 pt-lg-3 mb-4 pl-lg-5 px-lg-0 px-4 portfolio-content">
   <p>在RSA的的算法中间，有一个非常核心的问题，就是要找两个足够大的素数，利用这两个素数的乘积很难用计算机在短时间完成分解的性质来设计的。 但是这边就有一个非常现实的问题，第一，这两个足够大的素数怎么找，第二，素数够不够多，如果素数数量是非常有限的，随着数越来越大，素数的个数增长也同时变得很慢，那是不是就可以利用列表的方式，然后用\(n^2\)的复杂度来完成暴力破解</p>
-<h1 id="素数的分布"><a href="#素数的分布" class="headerlink" title="素数的分布"></a>素数的分布</h1><p>这边首先要提一个<a href="https://en.wikipedia.org/wiki/Prime_number_theorem" target="_blank" rel="noopener">Prime number theroem</a>。这个理论直接揭示了素数分布的规律，简单说素数的分布符合以下的分布<script type="math/tex">\pi(N) \sim \frac{N}{log(N)}</script></p>
-<p>Wiki上面对这个分布，有一个形象的说法，就是说对于一个小于\(10^n\)的数来说，它是素数的概率是一个小于\(10^{2n}\)的数的两倍</p>
-<p>然后根据这个分布，我们可以得到大概的素数个数的估计，已经大概的素数间隔的估计  </p>
-<div class="table-container">
+<h1 id="素数的分布"><a class="markdownIt-Anchor" href="#素数的分布"></a> 素数的分布</h1>
+<p>这边首先要提一个<a href="https://en.wikipedia.org/wiki/Prime_number_theorem" target="_blank" rel="noopener">Prime number theroem</a>。这个理论直接揭示了素数分布的规律，简单说素数的分布符合以下的分布$$\pi(N) \sim \frac{N}{log(N)}$$</p>
+<p>Wiki上面对这个分布，有一个形象的说法，就是说对于一个小于\(10<sup>n\)的数来说，它是素数的概率是一个小于\(10</sup>{2n}\)的数的两倍</p>
+<p>然后根据这个分布，我们可以得到大概的素数个数的估计，已经大概的素数间隔的估计</p>
 <table>
 <thead>
 <tr>
@@ -110,12 +106,12 @@
 </tr>
 </tbody>
 </table>
-</div>
 <p>因为现在key的size大概是 \(1024\) bit - \(4096\) bit, 这就意味着我们使用的素数大概是 \(512\) bit - \(2048\) bit。 \(2^{512}\) 大于 \(10^{150}\)。 利用上面的分布，大概我们可以估计出在这区间中大概有\(2.8\times10^{147}\)个素数，这个数量是非常巨大的，几乎不可能用暴力搜索的办法来分解两个大素数的乘积</p>
-<h1 id="如何寻找这两个素数"><a href="#如何寻找这两个素数" class="headerlink" title="如何寻找这两个素数"></a>如何寻找这两个素数</h1><p>上面已经提到素数的平均间隔其实是有限的，所以我们就有可能采取下面的算法</p>
+<h1 id="如何寻找这两个素数"><a class="markdownIt-Anchor" href="#如何寻找这两个素数"></a> 如何寻找这两个素数</h1>
+<p>上面已经提到素数的平均间隔其实是有限的，所以我们就有可能采取下面的算法</p>
 <ol>
 <li>随机产生一个\(512\) bit的奇数</li>
-<li>判断这个数是质数与否，这边大概需要判断\(\frac{Log(p)}{2} \sim 177\)次</li>
+<li>判断这个数是质数与否，这边大概需要判断\(\frac{Log§}{2} \sim 177\)次</li>
 <li>如果不是， 加 \(2\)， 继续判断</li>
 </ol>
 
@@ -129,7 +125,39 @@
     <!-- After footer scripts -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
-  </body>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
 </html>

@@ -76,13 +76,19 @@
 </div>
 <div class="col-lg-8 col-12 pt-lg-3 mb-4 pl-lg-5 px-lg-0 px-4 portfolio-content">
   <p>I did not understand well RSA algorithm for a long while. Now I determined to master it. However I found that the description in Wiki is not very clear. So the following is my tring.</p>
-<h2 id="symmetric-asymmetric-cryptosystem"><a href="#symmetric-asymmetric-cryptosystem" class="headerlink" title="symmetric/asymmetric cryptosystem"></a>symmetric/asymmetric cryptosystem</h2><p>symmetric-key algorithm: use the same key in the process of encrption and decryption<br>public/private key cryptography or asymmetric cryptosystem: in constrast, use the different keys in the process of encryption and decryption</p>
-<p>It is easy to understand the situation where the same key is applied in encryption and decryption. But for the second, asymmetric crytosystem, it is not that easy. This kind of cryptosystem is used to do authentication.  Keys are different in encryption and decryption, one key can be published. Yes, the published key is named as “Public Key”. </p>
+<h2 id="symmetricasymmetric-cryptosystem"><a class="markdownIt-Anchor" href="#symmetricasymmetric-cryptosystem"></a> symmetric/asymmetric cryptosystem</h2>
+<p>symmetric-key algorithm: use the same key in the process of encrption and decryption<br>
+public/private key cryptography or asymmetric cryptosystem: in constrast, use the different keys in the process of encryption and decryption</p>
+<p>It is easy to understand the situation where the same key is applied in encryption and decryption. But for the second, asymmetric crytosystem, it is not that easy. This kind of cryptosystem is used to do authentication.  Keys are different in encryption and decryption, one key can be published. Yes, the published key is named as “Public Key”.</p>
 <p>The typical scenes using public/private key cryptography are like:</p>
 <ol>
-<li><p>Network Communication:<br>The public key is published. Then somebody can use the public key to encrypt message to transfer to the private key’s owner. Nobody can decrpyt the message by listening to the communication.</p>
+<li>
+<p>Network Communication:<br>
+The public key is published. Then somebody can use the public key to encrypt message to transfer to the private key’s owner. Nobody can decrpyt the message by listening to the communication.</p>
 </li>
-<li><p>Signature:<br>When somebody receives message from others, they want to know if the message is original or not. In the realtime, people always signs his name in the documents. Then anybody can verify if the signature is real or faked. We can use public/private key system do the same thing. The sender can use hash function to get one value to represent one document then use the private key to encrypt this value. The value after encryption is called as digital signature. The receiver can use the same hash function to process the received document and get one value. Then the receiver uses the public key to decrypt the received signature to get one value, then compare it with the hash value. If they are same, the document is still unchanged. However you should notice that there is one thing that the hash function should avoid collision. If somebody can fake one different document which can produce the same hash  value, it is clear that the system is broken. </p>
+<li>
+<p>Signature:<br>
+When somebody receives message from others, they want to know if the message is original or not. In the realtime, people always signs his name in the documents. Then anybody can verify if the signature is real or faked. We can use public/private key system do the same thing. The sender can use hash function to get one value to represent one document then use the private key to encrypt this value. The value after encryption is called as digital signature. The receiver can use the same hash function to process the received document and get one value. Then the receiver uses the public key to decrypt the received signature to get one value, then compare it with the hash value. If they are same, the document is still unchanged. However you should notice that there is one thing that the hash function should avoid collision. If somebody can fake one different document which can produce the same hash  value, it is clear that the system is broken.</p>
 </li>
 </ol>
 
@@ -96,7 +102,39 @@
     <!-- After footer scripts -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
-  </body>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
 </html>
