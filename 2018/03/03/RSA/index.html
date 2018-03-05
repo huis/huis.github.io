@@ -7,16 +7,16 @@
   
   <title>RSA | Rafael Sun</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="I did not understand well RSA algorithm for a long while. Now I determined to master it. However I found that the description in Wiki is not very clear. So the following is my tring.  symmetric/asymme">
+  <meta name="description" content="I did not understand well RSA algorithm for a long while. Now I determined to master it. However I found that the description in Wiki is not very clear. So the following is my tring. symmetric/asymmet">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RSA">
 <meta property="og:url" content="http://yoursite.com/2018/03/03/RSA/index.html">
 <meta property="og:site_name" content="Rafael Sun">
-<meta property="og:description" content="I did not understand well RSA algorithm for a long while. Now I determined to master it. However I found that the description in Wiki is not very clear. So the following is my tring.  symmetric/asymme">
+<meta property="og:description" content="I did not understand well RSA algorithm for a long while. Now I determined to master it. However I found that the description in Wiki is not very clear. So the following is my tring. symmetric/asymmet">
 <meta property="og:updated_time" content="2018-03-05T10:33:51.307Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RSA">
-<meta name="twitter:description" content="I did not understand well RSA algorithm for a long while. Now I determined to master it. However I found that the description in Wiki is not very clear. So the following is my tring.  symmetric/asymme">
+<meta name="twitter:description" content="I did not understand well RSA algorithm for a long while. Now I determined to master it. However I found that the description in Wiki is not very clear. So the following is my tring. symmetric/asymmet">
   
     <link rel="alternate" href="/atom.xml" title="Rafael Sun" type="application/atom+xml">
   
@@ -52,9 +52,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -86,26 +86,20 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>I did not understand well RSA algorithm for a long while. Now I determined to master it. However I found that the description in Wiki is not very clear. So the following is my tring.</p>
-<h2 id="symmetricasymmetric-cryptosystem"><a class="markdownIt-Anchor" href="#symmetricasymmetric-cryptosystem"></a> symmetric/asymmetric cryptosystem</h2>
-<p>symmetric-key algorithm: use the same key in the process of encrption and decryption<br>
-public/private key cryptography or asymmetric cryptosystem: in constrast, use the different keys in the process of encryption and decryption</p>
-<p>It is easy to understand the situation where the same key is applied in encryption and decryption. But for the second, asymmetric crytosystem, it is not that easy. This kind of cryptosystem is used to do authentication.  Keys are different in encryption and decryption, one key can be published. Yes, the published key is named as “Public Key”.</p>
+<h2 id="symmetric-asymmetric-cryptosystem"><a href="#symmetric-asymmetric-cryptosystem" class="headerlink" title="symmetric/asymmetric cryptosystem"></a>symmetric/asymmetric cryptosystem</h2><p>symmetric-key algorithm: use the same key in the process of encrption and decryption<br>public/private key cryptography or asymmetric cryptosystem: in constrast, use the different keys in the process of encryption and decryption</p>
+<p>It is easy to understand the situation where the same key is applied in encryption and decryption. But for the second, asymmetric crytosystem, it is not that easy. This kind of cryptosystem is used to do authentication.  Keys are different in encryption and decryption, one key can be published. Yes, the published key is named as “Public Key”. </p>
 <p>The typical scenes using public/private key cryptography are like:</p>
 <ol>
-<li>
-<p>Network Communication:<br>
-The public key is published. Then somebody can use the public key to encrypt message to transfer to the private key’s owner. Nobody can decrpyt the message by listening to the communication.</p>
+<li><p>Network Communication:<br>The public key is published. Then somebody can use the public key to encrypt message to transfer to the private key’s owner. Nobody can decrpyt the message by listening to the communication.</p>
 </li>
-<li>
-<p>Signature:<br>
-When somebody receives message from others, they want to know if the message is original or not. In the realtime, people always signs his name in the documents. Then anybody can verify if the signature is real or faked. We can use public/private key system do the same thing. The sender can use hash function to get one value to represent one document then use the private key to encrypt this value. The value after encryption is called as digital signature. The receiver can use the same hash function to process the received document and get one value. Then the receiver uses the public key to decrypt the received signature to get one value, then compare it with the hash value. If they are same, the document is still unchanged. However you should notice that there is one thing that the hash function should avoid collision. If somebody can fake one different document which can produce the same hash  value, it is clear that the system is broken.</p>
+<li><p>Signature:<br>When somebody receives message from others, they want to know if the message is original or not. In the realtime, people always signs his name in the documents. Then anybody can verify if the signature is real or faked. We can use public/private key system do the same thing. The sender can use hash function to get one value to represent one document then use the private key to encrypt this value. The value after encryption is called as digital signature. The receiver can use the same hash function to process the received document and get one value. Then the receiver uses the public key to decrypt the received signature to get one value, then compare it with the hash value. If they are same, the document is still unchanged. However you should notice that there is one thing that the hash function should avoid collision. If somebody can fake one different document which can produce the same hash  value, it is clear that the system is broken. </p>
 </li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/03/RSA/" data-id="cjee7a89l0000agnesr6nuso7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/03/RSA/" data-id="cjee8if0t00008kne9zkz5v5t" class="article-share-link">Compartir</a>
       
       
     </footer>
@@ -115,7 +109,7 @@ When somebody receives message from others, they want to know if the message is 
 <nav id="article-nav">
   
     <a href="/2018/03/05/素数分布-RSA相关/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
+      <strong class="article-nav-caption">Nuevo</strong>
       <div class="article-nav-title">
         
           素数分布-RSA相关
@@ -143,7 +137,7 @@ When somebody receives message from others, they want to know if the message is 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archivos</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
     </div>
@@ -153,7 +147,7 @@ When somebody receives message from others, they want to know if the message is 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Posts recientes</h3>
     <div class="widget">
       <ul>
         
@@ -178,7 +172,7 @@ When somebody receives message from others, they want to know if the message is 
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 Hui Sun<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
